@@ -1,0 +1,16 @@
+Test API: GET /todos/1 returneaza status 200 si contine un title
+Endpoint: https://jsonplaceholder.typicode.com/todos/1
+
+--- ARRANGE (Pregatire) ---
+  baseUrl  = "https://jsonplaceholder.typicode.com"
+  endpoint = "/todos/1"
+
+--- ACT (Actiune) ---
+  response = trimite un request HTTP GET catre (baseUrl + endpoint)
+
+--- ASSERT (Verificare) ---
+  verifica ca response.statusCode este egal cu 200
+  verifica ca response.body contine campul "title"
+  verifica ca valoarea campului "title" NU este goala (not null / not empty)
+
+Rezultat asteptat: testul este PASSED daca toate cele 3 verificari sunt adevarate.
